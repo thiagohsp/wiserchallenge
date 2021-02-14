@@ -4,7 +4,6 @@ import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { Link /* , useHistory */ } from 'react-router-dom';
-import logoImg from '../../assets/logo.svg';
 import { Container, Content, Background, AnimatedContainer } from './styles';
 import getValidationErrors from '../../utils/getValidationErrors';
 import { useToast } from '../../hooks/toast';
@@ -22,7 +21,6 @@ const ForgotPassword: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
-  // const history = useHistory();
 
   const handleSubmit = useCallback(
     async (data: ForgotPasswordFormData) => {
@@ -73,12 +71,11 @@ const ForgotPassword: React.FC = () => {
     <Container>
       <Content>
         <AnimatedContainer>
-          <img src={logoImg} alt="GoBarber" />
           <Form ref={formRef} onSubmit={handleSubmit}>
             <h1>Recuperar Senha</h1>
             <Input icon={FiMail} name="email" placeholder="Digite seu e-mail" />
             <Button loading={loading} type="submit">
-              Recuperar
+              RECUPERAR
             </Button>
           </Form>
 

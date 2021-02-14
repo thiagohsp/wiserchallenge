@@ -52,14 +52,14 @@ export const AnimatedContainer = styled.div`
     display: flex;
     align-items: center;
     margin-top: 16px;
-    color: #ff9000;
+    color: #ff377f;
     text-decoration: none;
     transition: color 0.5s;
     svg {
       margin-right: 8px;
     }
     &:hover {
-      color: ${shade(0.4, '#ff9000')};
+      color: ${shade(0.4, '#FF377F')};
     }
   }
 `;
@@ -75,6 +75,12 @@ export const Content = styled.div`
 
 export const Background = styled.div`
   flex: 1;
-  background: url(${backgroundImage}) no-repeat center;
+  background-image: linear-gradient(
+      to top,
+      #130525 0%,
+      rgba(105, 57, 153, 0) 100%
+    ),
+    url(${backgroundImage});
   background-size: cover;
+  background-position: center;
 `;

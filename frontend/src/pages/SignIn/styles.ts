@@ -6,6 +6,20 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: stretch;
+  @media (max-width: 456px) {
+    //flex: 1;
+
+    background-image: linear-gradient(
+        to top,
+        #130525 0%,
+        rgba(105, 57, 153, 0) 100%
+      ),
+      url(${backgroundImage});
+    background-size: cover;
+    background-position: center;
+    place-content: center;
+    align-items: center;
+  }
 `;
 
 const appearFromLeft = keyframes`
@@ -28,9 +42,12 @@ export const AnimatedContainer = styled.div`
   animation: ${appearFromLeft} 1s;
 
   form {
-    width: 340px;
-    margin: 80px 0;
+    width: 256px;
     text-align: center;
+
+    @media (max-width: 456px) {
+      margin: 60px 0;
+    }
 
     h1 {
       text-align: left;
@@ -38,6 +55,14 @@ export const AnimatedContainer = styled.div`
       font-weight: normal;
       font-size: 40px;
       line-height: 48px;
+
+      @media (max-width: 456px) {
+        margin-top: 108px;
+        font-size: 36px;
+        line-height: 48px;
+        width: 100%;
+        text-align: center;
+      }
     }
 
     h3 {
@@ -49,6 +74,12 @@ export const AnimatedContainer = styled.div`
       font-weight: 600;
       font-size: 16px;
       line-height: 20px;
+
+      @media (max-width: 456px) {
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 16px;
+      }
     }
 
     a {
@@ -59,6 +90,10 @@ export const AnimatedContainer = styled.div`
       transition: color 0.5s;
       &:hover {
         color: ${shade(0.4, '#989FDB')};
+      }
+
+      @media (max-width: 456px) {
+        color: #fff;
       }
     }
   }
@@ -85,16 +120,32 @@ export const Content = styled.div`
   align-items: center;
   place-content: center;
   width: 100%;
+  background-color: white;
+  @media (max-width: 1024px) {
+    max-width: 456px;
+  }
+
+  @media (max-width: 456px) {
+    height: 357px;
+    margin: 32px;
+    border-radius: 20px;
+    //max-width: 456px;
+  }
+
   max-width: 700px;
 `;
 
 export const Background = styled.div`
+  @media (max-width: 456px) {
+    flex: 0;
+  }
   flex: 1;
   background-image: linear-gradient(
-      to bottom,
-      rgba(245, 246, 252, 0.52),
-      rgba(117, 19, 93, 0.73)
+      to top,
+      #130525 0%,
+      rgba(105, 57, 153, 0) 100%
     ),
     url(${backgroundImage});
   background-size: cover;
+  background-position: center;
 `;

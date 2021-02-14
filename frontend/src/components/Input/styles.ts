@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import Tooltip from '../Tooltip';
 
 interface ContainerProps {
   isFocused: boolean;
@@ -16,11 +15,14 @@ export const Container = styled.div<ContainerProps>`
   align-items: center;
   color: #989fdb;
   box-sizing: border-box;
+  @media (max-width: 456px) {
+    padding: 12px;
+  }
 
   ${props =>
     props.hasError &&
     css`
-      border-color: #c53030;
+      border-color: #ff377f;
     `}
 
   ${props =>
@@ -36,48 +38,45 @@ export const Container = styled.div<ContainerProps>`
       color: #383e71;
     `}
 
-  svg {
-    margin-right: 16px;
-  }
-
   & + div {
     margin-top: 8px;
   }
 
   input {
     flex: 1;
+    width: 80%;
     background: transparent;
     border: 0;
     color: #383e71;
+    @media (max-width: 456px) {
+      font-size: 12px;
+    }
 
     &::placeholder {
       color: #989fdb;
     }
   }
+
+  svg {
+    height: 20px;
+    margin-left: 8px;
+  }
 `;
 
-export const Error = styled(Tooltip)`
-  height: 20px;
-  margin-left: 16px;
-  margin-top: 4px;
-  svg {
-    margin: 0;
-  }
-
-  span {
-    background: #ff377f;
-    color: #fff;
-
-    &::before {
-      border-color: #ff377f transparent;
-    }
-  }
+export const Error = styled.div`
+  text-align: left;
+  font-size: 10px;
+  margin: 12px;
+  color: #ff377f;
 `;
 
 export const Label = styled.div`
   width: 100%;
-  padding: 12px;
+  padding: 8px;
   text-align: left;
   text-transform: uppercase;
   color: #383e71;
+  @media (max-width: 456px) {
+    font-size: 10px;
+  }
 `;
