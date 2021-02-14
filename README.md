@@ -25,7 +25,7 @@ $ git clone https://github.com/thiagohsp/wiserchallenge.git
 
 
 # open folder frontend and install dependencies
-$ cd frontend && npm install
+$ cd frontend && yarn install
 
 
 # run application
