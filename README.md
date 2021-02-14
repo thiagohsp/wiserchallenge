@@ -35,4 +35,4 @@ $ yarn start
 
 ## Login
 
-This project uses MockAPI to create sessions login data and you can use any valid E-mail and any Password (with minimun 6 characters).
+This project uses MockAPI to create sessions login data and you can use any valid E-mail and any Password (with minimum 6 characters).
