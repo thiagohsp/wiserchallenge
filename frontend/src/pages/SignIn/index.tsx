@@ -1,10 +1,9 @@
 import React, { useRef, useCallback } from 'react';
-import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
+import { FiMail, FiLock } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { Link, useHistory } from 'react-router-dom';
-import logoImg from '../../assets/logo.svg';
 import { Container, Content, Background, AnimatedContainer } from './styles';
 import getValidationErrors from '../../utils/getValidationErrors';
 import { useAuth } from '../../hooks/auth';
@@ -42,6 +41,12 @@ const SignIn: React.FC = () => {
         await signIn({
           email: data.email,
           password: data.password,
+        });
+
+        addToast({
+          title: 'Login realizado',
+          type: 'success',
+          description: 'Acesso concedido com sucesso!',
         });
 
         history.push('/dashboard');

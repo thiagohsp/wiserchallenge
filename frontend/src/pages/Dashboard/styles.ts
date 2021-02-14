@@ -5,14 +5,14 @@ export const Container = styled.div``;
 
 export const Header = styled.header`
   padding: 32px 0;
-  background: #28262e;
+  background: #e5e5e5;
 `;
 
 export const HeaderContent = styled.div`
-  max-width: 1120px;
+  max-width: min(1120px, 100vw);
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: left;
 
   > img {
     height: 80px;
@@ -28,11 +28,12 @@ export const HeaderContent = styled.div`
 
   button {
     margin-left: auto;
+    margin-right: 20px;
     background: transparent;
     border: 0;
 
     svg {
-      color: #999591;
+      color: #ff377f;
       width: 20px;
       height: 20px;
     }
@@ -42,7 +43,7 @@ export const HeaderContent = styled.div`
 export const Profile = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 80px;
+  margin-left: 20px;
 
   img {
     width: 56px;
@@ -57,17 +58,17 @@ export const Profile = styled.div`
     line-height: 24px;
 
     span {
-      color: #f4ede8;
+      color: #383e71;
     }
 
     strong {
-      color: #ff9000;
+      color: #989fdb;
     }
   }
 `;
 
 export const Content = styled.main`
-  max-width: 1120px;
+  max-width: min(1120px, calc(100vw - 10%));
   margin: 64px auto;
   display: flex;
 `;
@@ -82,7 +83,7 @@ export const Schedule = styled.div`
 
   p {
     margin-top: 8px;
-    color: #ff9000;
+    color: #989fdb;
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -97,7 +98,11 @@ export const Schedule = styled.div`
       width: 1px;
       height: 12px;
       margin: 0 12px;
-      background: #ff9000;
+      background: #989fdb;
+    }
+
+    @media (max-width: 456px) {
+      font-size: 12px;
     }
   }
 `;
